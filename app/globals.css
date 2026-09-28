@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  --background: #dbe1e8;
+  --foreground: #112c4e;
+  --color-navy: #112c4e;
+  --color-accent-purple: #b84dff;
+  --color-accent-cyan: #49d5ff;
+  --color-body: #2a2a2a;
+  --color-gradient-purple: rgba(151, 4, 249, 0.1);
+  --color-gradient-cyan: rgba(126, 225, 255, 0.1);
+  --color-gradient-purple-strong: rgba(151, 4, 249, 0.8);
+  --color-gradient-cyan-strong: rgba(126, 225, 255, 0.8);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-navy: var(--color-navy);
+  --color-accent-purple: var(--color-accent-purple);
+  --color-accent-cyan: var(--color-accent-cyan);
+  --color-body: var(--color-body);
+  --font-sans: var(--font-nata-sans);
+  --font-display: var(--font-syncopate);
+  --font-accent: var(--font-allan);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-nata-sans), sans-serif;
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-float-soft {
+  animation: float-soft 4s ease-in-out infinite;
+}
+
+.animate-float-soft-delayed {
+  animation: float-soft 4.5s ease-in-out 0.6s infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
+
+.animate-fade-up-delayed {
+  animation: fade-up 0.8s ease-out 0.15s both;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out 0.3s both;
+}
