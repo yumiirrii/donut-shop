@@ -21,9 +21,9 @@ const allan = Allan({
 });
 
 export const metadata: Metadata = {
-    title: "Doze Donuts",
+    title: "Doz Donuts",
     description:
-        "Your Daily DoZe of Sweet — a little sweetness to brighten up your everyday.",
+        "Your Daily Dose of Sweet — a little sweetness to brighten up your everyday.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
