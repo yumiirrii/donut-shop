@@ -9,13 +9,13 @@ import {
     type MenuCategory,
 } from "@/lib/menu-products";
 
-function chunk<T>(items: T[], size: number): T[][] {
-    const rows: T[][] = [];
-    for (let i = 0; i < items.length; i += size) {
-        rows.push(items.slice(i, i + size));
-    }
-    return rows;
-}
+// function chunk<T>(items: T[], size: number): T[][] {
+//     const rows: T[][] = [];
+//     for (let i = 0; i < items.length; i += size) {
+//         rows.push(items.slice(i, i + size));
+//     }
+//     return rows;
+// }
 
 export function MenuCatalog() {
     const [category, setCategory] = useState<MenuCategory>("all");
@@ -32,11 +32,11 @@ export function MenuCatalog() {
 
     return (
         <>
-            <section className="flex w-full flex-col items-center justify-center gap-7 overflow-clip py-4 leading-normal whitespace-nowrap">
+            <section className="flex w-full flex-col items-center justify-center gap-7 overflow-clip py-4 leading-normal">
                 <h1 className="font-display text-xl font-normal text-navy">
                     Menu
                 </h1>
-                <div className="flex w-full items-center justify-center gap-14 text-sm tracking-[0.56px]">
+                <div className="flex w-full items-center justify-center gap-x-5 gap-y-3 text-xs tracking-[0.56px] sm:gap-x-10 sm:text-sm lg:gap-14">
                     {menuCategories.map((id) => {
                         const isActive = category === id;
                         return (
@@ -58,17 +58,12 @@ export function MenuCatalog() {
                 </div>
             </section>
 
-            <div className="flex w-full flex-col items-center gap-12">
-                {chunk(products, 4).map((row) => (
-                    <div
-                        key={row.map((product) => product.id).join("-")}
-                        className="flex items-center justify-center gap-6"
-                    >
-                        {row.map((product) => (
-                            <MenuItem key={product.id} product={product} />
-                        ))}
-                    </div>
-                ))}
+            <div className="w-full mx-auto max-w-[1092px] mt-8">
+                <div className="flex w-full flex-wrap items-center justify-center sm:justify-start gap-x-6 gap-y-12">
+                    {products.map((product) => (
+                        <MenuItem key={product.id} product={product} />
+                    ))}
+                </div>
             </div>
         </>
     );

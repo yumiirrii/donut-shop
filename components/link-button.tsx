@@ -7,7 +7,7 @@ type LinkButtonProps = {
 
 const variants = {
     Menu: {
-        href: "",
+        href: "/menu",
         label: "Menu",
         icon: "/images/donut-icon.svg",
         widthClass: "w-full sm:w-[400px]",

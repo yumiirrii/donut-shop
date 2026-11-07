@@ -8,7 +8,7 @@ type MenuItemProps = {
 export function MenuItem({ product }: MenuItemProps) {
     return (
         <article className="flex flex-col items-end gap-2">
-            <div className="peer group flex items-center overflow-clip rounded-[24px] bg-white/25 px-6 py-5 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] backdrop-blur-sm transition-[padding] duration-300 hover:px-10 hover:py-8">
+            <div className="peer group flex items-center overflow-clip rounded-[24px] bg-white/25 px-6 py-5 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] backdrop-blur-sm transition-transform duration-300 hover:scale-105">
                 <div className="flex w-[207px] shrink-0 flex-col items-start gap-2">
                     <div className="relative flex size-[200px] items-center justify-center">
                         <div className="relative size-[200px] -rotate-90">
